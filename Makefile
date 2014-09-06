@@ -1,13 +1,20 @@
-install: conf
+PROJECT_NAME=goro
+ENV_DIR=~/python-envs
 
-conf:
-	pip install -r requirements.txt
-	
+PROJECT_ENV_DIR="${ENV_DIR}/${PROJECT_NAME}"
+
+install: setup
+
+setup:
+	virtualenv ${PROJECT_ENV_DIR}
+	${PROJECT_ENV_DIR}/bin/pip install -r requirements.txt
+
 check:
-	pep8 -r ./
+	${PROJECT_ENV_DIR}/bin/pep8 -r ./
 
-deploy:
+deploy: setup
 	./manage.py collectstatic --clear --noinput
+	touch goro/wsgi.py
 
 clean:
-	rm -rf static/*
+	rm -rf static/* ${PROJECT_ENV_DIR}
