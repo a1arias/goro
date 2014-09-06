@@ -1,7 +1,7 @@
 PROJECT_NAME=goro
 ENV_DIR=~/python-envs
 
-PROJECT_ENV_DIR="${ENV_DIR}/${PROJECT_NAME}"
+PROJECT_ENV_DIR=${ENV_DIR}/${PROJECT_NAME}
 
 install: setup
 
