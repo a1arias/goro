@@ -7,6 +7,7 @@ install: setup
 
 setup:
 	virtualenv ${PROJECT_ENV_DIR}
+	. ${PROJECT_ENV_DIR}/bin/activate
 	${PROJECT_ENV_DIR}/bin/pip install -r requirements.txt
 
 check:
