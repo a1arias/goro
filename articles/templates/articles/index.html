@@ -4,11 +4,18 @@
 
 {% block content %}
 <div id="center_col">
-{% for entry in articles %}
+	{% if articles %}
+	{% for entry in articles %}
 	<div class="article_entry">
     <h1>{{ entry.headline }}</h1>
     <div>{{ entry.content|safe }}</div>
 	</div>
-{% endfor %}
+	{% endfor %}
+	{% else %}
+	<div class="warning">
+		<h4>No Articles</h4>
+		<p>Come back soon!</p>
+	</div>
+	{% endif %}
 </div>
 {% endblock %}
