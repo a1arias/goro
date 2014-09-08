@@ -36,6 +36,10 @@ body {
 	border-bottom: 1px solid white;
 }
 
+#content {
+	overflow: auto;
+}
+
 #left_col {
 	width: 20%;
 	float: left;
