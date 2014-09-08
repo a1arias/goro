@@ -3,8 +3,12 @@
 {% block title %}Adri Codes{% endblock %}
 
 {% block content %}
+<div id="center_col">
 {% for entry in articles %}
+	<div class="article_entry">
     <h1>{{ entry.headline }}</h1>
     <div>{{ entry.content|safe }}</div>
+	</div>
 {% endfor %}
+</div>
 {% endblock %}

@@ -2,16 +2,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href={% static "goro/style.css" %} />
+    <link rel="stylesheet" href={% static "articles/style.css" %} />
     <title>{% block title %}My amazing site{% endblock %}</title>
 </head>
 
 <body>
     <div id="navbar">
         {% block navbar %}
+				<p>Site Navigation:</p>
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/blog/">Blog</a></li>
+						<li><a class="active" href="{% url 'articles:index' %}">Blog</a></li>
         </ul>
         {% endblock %}
     </div>
