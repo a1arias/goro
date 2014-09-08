@@ -1,0 +1,10 @@
+{% extends "articles/base.html" %}
+
+{% block title %}Adri Codes{% endblock %}
+
+{% block content %}
+{% for entry in articles %}
+    <h1>{{ entry.headline }}</h1>
+    <div>{{ entry.content|safe }}</div>
+{% endfor %}
+{% endblock %}
