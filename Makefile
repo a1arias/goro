@@ -17,6 +17,8 @@ check:
 deploy: setup
 	. ${PROJECT_ENV_DIR}/bin/activate; \
 		./manage.py collectstatic --clear --noinput
+	. ${PROJECT_ENV_DIR}/bin/activate; \
+		./manage.py migrate
 	touch ${PROJECT_NAME}/wsgi.py
 
 clean:
