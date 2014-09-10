@@ -17,13 +17,13 @@ class Series(models.Model):
         verbose_name_plural = 'series'
 
 class Article(models.Model):
-
     def __str__(self):
         return self.headline
 
     pub_date = models.DateField()
     slug = models.SlugField(max_length=200, unique=True)
     headline = models.CharField(max_length=200)
+    preview = models.TextField(null=False)
     content = models.TextField()
     reporter = models.ForeignKey(Reporter)
     series = models.ForeignKey(Series,

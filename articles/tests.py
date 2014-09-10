@@ -31,5 +31,13 @@ class ArticleDetailViewTests(TestCase):
         slug = slugify("test post 1")
         response = self.client.get(reverse('articles:detail',
                                            args=(slug,)))
-
         self.assertEqual(response.status_code, 200)
+
+    def test_detail_view_with_nonexistent_slug(self):
+        create_reporter("Adrian")
+        reporter = Reporter.objects.get(full_name="Adrian")
+        create_article("test post 1", reporter)
+        slug = "non-existent-slug"
+        response = self.client.get(reverse('articles:detail',
+                                           args=(slug,)))
+        self.assertEqual(response.status_code, 404)

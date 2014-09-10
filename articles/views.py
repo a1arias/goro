@@ -5,7 +5,7 @@ from articles.utils import unslugify
 
 def index(request):
 
-    articles = Article.objects.all()[:5]
+    articles = Article.objects.all()[:10]
     context = {'articles': articles}
     return render(request, 'articles/index.html', context)
 
@@ -19,21 +19,12 @@ def year_archive(request, year):
 def detail(request, slug):
     """
     Slug can be 'something-like-this'
-    TODO: add support for 'something like this' <-- note the spaces
     """
     s = unslugify(slug)
-    #article = get_object_or_404(Article, headline__contains=s)
-    articles = Article.objects.filter(
-            headline__contains=s).order_by('pub_date')
-    if(articles.count() == 1):
-        context = {
-            'article': articles[0]
-        }
-        template = 'articles/detail.html'
-    else:
-        context = {
-            'articles': articles
-        }
-        template = 'articles/index.html'
+    article = get_list_or_404(Article, headline__contains=s)
+    context = {
+        'article': article[0]
+    }
+    template = 'articles/detail.html'
 
     return render(request, template, context)
