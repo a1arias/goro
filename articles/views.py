@@ -20,10 +20,9 @@ def detail(request, slug):
     """
     Slug can be 'something-like-this'
     """
-    s = unslugify(slug)
-    article = get_list_or_404(Article, headline__contains=s)
+    article = get_object_or_404(Article, slug__exact=slug)
     context = {
-        'article': article[0]
+        'article': article
     }
     template = 'articles/detail.html'
 
