@@ -3,4 +3,69 @@ li a {
 }
 
 body {
-    background: white url("images/background.gif") no-repeat right bottom;
+    background: black;
+}
+
+#navbar {
+	overflow: auto;
+}
+
+#navbar p {
+	display: none;
+}
+
+#navbar ul {
+	float: left;
+}
+
+#navbar ul li {
+	list-style: none;
+	float: left;
+}
+
+#navbar ul li a {
+	padding: 12px 0.5em;
+	text-decoration: none;
+}
+
+#navbar ul li a:hover {
+	text-decoration: underline;
+}
+
+#navbar ul li a.active {
+	border-bottom: 1px solid white;
+}
+
+#content {
+	overflow: auto;
+}
+
+#left_col {
+	width: 20%;
+	float: left;
+	padding-bottom: 1em;
+	text-align: justify;
+}
+
+#right_col {
+	width: 20%;
+	float: left;
+	padding-bottom: 1em;
+}
+
+#center_col {
+	width: 60%;
+	float: left;
+	background: white;
+	padding: 1em;
+}
+
+footer {
+	clear: both;
+	background: white;
+}
+
+div.article_entry {
+	border-bottom: 1px solid black;
+	padding: 0 0 2em 0;
+}

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href={% static "articles/style.css" %} />
+    <link rel="stylesheet" href={% static "goro/style.css" %} />
     <title>{% block title %}My amazing site{% endblock %}</title>
 </head>
 
@@ -11,8 +11,8 @@
         {% block navbar %}
 				<p>Site Navigation:</p>
         <ul>
-            <li><a href="/">Home</a></li>
-						<li><a class="active" href="{% url 'articles:index' %}">Blog</a></li>
+            <li><a class="active" href="/">Home</a></li>
+						<li><a href="{% url 'articles:index' %}">Blog</a></li>
         </ul>
         {% endblock %}
     </div>
