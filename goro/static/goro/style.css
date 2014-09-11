@@ -1,9 +1,9 @@
-li a {
-    color: green;
-}
-
 body {
     background: black;
+}
+
+#navbar li a {
+    color: green;
 }
 
 #navbar {
@@ -63,6 +63,16 @@ body {
 footer {
 	clear: both;
 	background: white;
+}
+
+.heading_link {
+    color: darkgreen;
+    text-decoration: none;
+}
+
+.heading_link:hover {
+    color: darkgreen;
+    text-decoration: underline;
 }
 
 div.article_entry {

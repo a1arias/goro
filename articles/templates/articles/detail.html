@@ -1,6 +1,14 @@
-{% extends "articles/base.html" %}
+{% extends "goro/base.html" %}
 
 {% block title %}Adri Codes{% endblock %}
+
+{% block navbar %}
+<p>Site Navigation:</p>
+<ul>
+    <li><a href="/">Home</a></li>
+    <li><a class="active" href="{% url 'articles:index' %}">Blog</a></li>
+</ul>
+{% endblock %}
 
 {% block content %}
 <div id="left_col">

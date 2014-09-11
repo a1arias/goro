@@ -1,6 +1,9 @@
 from django.shortcuts import render
+from goro.models import Page
 
 def index(request):
-    return render(request, 'goro/index.html', {
-        'title': 'Hello!',
-    })
+
+    p = Page.objects.get(name__iexact='home')
+
+    return render(request, 'goro/index.html',
+                  {'page': p})
