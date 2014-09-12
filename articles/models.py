@@ -21,7 +21,7 @@ class Article(models.Model):
         return self.headline
 
     pub_date = models.DateField()
-    slug = models.SlugField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True, blank=True)
     headline = models.CharField(max_length=200)
     preview = models.TextField(null=False)
     content = models.TextField()
