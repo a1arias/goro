@@ -1,4 +1,5 @@
 {% extends "goro/base.html" %}
+{% load markup %}
 
 {% block title %}Adri Codes{% endblock %}
 
@@ -16,7 +17,7 @@
 	{% for entry in articles %}
 	<div class="article_entry">
     <h1><a class="heading_link" href="{% url 'articles:detail' slug=entry.slug %}">{{ entry.headline }}</a></h1>
-    <div>{{ entry.preview|safe }}</div>
+    <div>{{ entry.preview|restructuredtext }}</div>
 	</div>
 	{% endfor %}
 	{% else %}
