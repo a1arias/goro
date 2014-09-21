@@ -1,5 +1,22 @@
 {% extends "goro/base.html" %}
 {% load markup %}
+{% load staticfiles %}
+
+{% block staticfiles %}
+<link rel="stylesheet" href="{% static "articles/highlight/styles/sunburst.css" %}">
+<script src="{% static "articles/jquery-1.11.1.js" %}"></script>
+<script src="{% static "articles/highlight/highlight.pack.js" %}"></script>
+{% endblock %}
+
+{% block javascript %}
+<script>
+jQuery(function( $ ) {
+	$('pre.code').each(function(i, block) {
+		hljs.highlightBlock(block);
+	});
+});
+</script>
+{% endblock %}
 
 {% block title %}Adri Codes{% endblock %}
 

@@ -2,7 +2,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+		{% block staticfiles %}{% endblock %}
+		{% block javascript %}{% endblock %}
     <link rel="stylesheet" href={% static "goro/style.css" %} />
+
     <title>{% block title %}My amazing site{% endblock %}</title>
 </head>
 
