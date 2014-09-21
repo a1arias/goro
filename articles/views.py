@@ -5,7 +5,7 @@ from articles.utils import unslugify
 
 def index(request):
 
-    articles = Article.objects.all()[:10]
+    articles = Article.objects.all().order_by('-pub_date')[:10]
     context = {'articles': articles}
     return render(request, 'articles/index.html', context)
 
