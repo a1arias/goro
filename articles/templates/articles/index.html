@@ -7,7 +7,7 @@
 <p>Site Navigation:</p>
 <ul>
     <li><a href="/">Home</a></li>
-    <li><a class="active" href="{% url 'articles:index' %}">Blog</a></li>
+    <li><a class="active" href="{% url 'articles:index' %}">Articles</a></li>
 </ul>
 {% endblock %}
 
@@ -16,8 +16,10 @@
 	{% if articles %}
 	{% for entry in articles %}
 	<div class="article_entry">
-    <h1><a class="heading_link" href="{% url 'articles:detail' slug=entry.slug %}">{{ entry.headline }}</a></h1>
-    <div>{{ entry.preview|restructuredtext }}</div>
+        <h1><a class="heading_link" href="{% url 'articles:detail' slug=entry.slug %}">{{ entry.headline }}</a></h1>
+        <div>{{ entry.preview|restructuredtext }}</div>
+        <div><span>Reporter: {{entry.reporter.full_name}}</span></div>
+        <div><span>Publish Date: {{ entry.pub_date }}</span></div>
 	</div>
 	{% endfor %}
 	{% else %}
