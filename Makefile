@@ -19,6 +19,8 @@ deploy: setup
 		./manage.py collectstatic --clear --noinput
 	. ${PROJECT_ENV_DIR}/bin/activate; \
 		./manage.py migrate
+	. ${PROJECT_ENV_DIR}/bin/activate; python -m nltk.downloader all
+
 	touch ${PROJECT_NAME}/wsgi.py
 
 clean:
